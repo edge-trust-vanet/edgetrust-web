@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://img.icons8.com/color/96/000000/connected-car.png" alt="EdgeTrust Logo" width="80"/>
   <h1>EdgeTrust-VANET Web</h1>
   <p>
     <em>Interactive documentation, research survey, and development blog for the EdgeTrust-VANET Project.</em>
