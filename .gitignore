@@ -26,3 +26,6 @@ dist-ssr
 
 # Scratch folder
 scratch/
+
+.firebase/
+*.tsbuildinfo
