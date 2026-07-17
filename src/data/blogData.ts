@@ -11,6 +11,28 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'sumo-veins-omnet-integration',
+    title: 'Bridging the Gap: Successful SUMO, OMNeT++, and Veins Integration',
+    excerpt: 'We achieved a major milestone today by establishing a bidirectional real-time bridge between our SUMO mobility traffic and the OMNeT++ network simulator using Veins. It wasn\'t easy, but we crushed the bugs!',
+    content: [
+      'Today (July 17, 2026) marks a massive achievement for the EdgeTrust-VANET team: Phase 3 is complete!',
+      'We successfully established the TraCI (Traffic Control Interface) bridge, meaning the physical vehicles driving in SUMO are now perfectly mirrored as network nodes broadcasting 802.11p Wi-Fi packets inside OMNeT++.',
+      'The Roadblocks We Overcame:',
+      'This integration was far from plug-and-play. We had to perform deep-level surgical fixes on the simulators:',
+      '1. TraCI API Version Mismatch: Our newer SUMO installation used TraCI API 22, but Veins 5.3 was hardcoded for API 20. We dove into the Veins C++ source code (TraCICommandInterface.cc), patched the version checks, and recompiled the core engine.',
+      '2. Python Daemon Ghosting: The sumo-launchd python script was leaving orphaned processes battling for port 9999, causing OMNeT++ to connect to dead sockets. We purged the zombies and enforced clean socket binds.',
+      '3. Obstacle Shadowing Crashes: The OMNeT++ radio physics engine crashed trying to compute signal bounce off missing buildings. We cleverly satisfied the engine by injecting a dummy obstacle XML completely out-of-bounds.',
+      '4. Vehicle Spawning Desync: We debugged a timing flaw where OMNeT++ demanded vehicle physical coordinates milliseconds before TraCI could fetch them from SUMO. Supplying dummy (0,0,0) initialization vectors solved the crash.',
+      'What We Learned:',
+      'We learned that bidirectional coupling of complex legacy simulators requires a deep understanding of their internal timing, API protocols, and physical-to-digital mapping. Watching the first safety beacons transmit across our grid intersection made every bug worth it!',
+      'Next, we will begin developing the Edge Server logic to start collecting telemetry for our Machine Learning models.'
+    ],
+    date: 'Jul 17, 2026',
+    readTime: '4 min read',
+    category: 'Milestone',
+    imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
     id: 'basic-traffic-simulation',
     title: 'Simulating Basic Traffic in SUMO & Connecting to OMNeT++',
     excerpt: 'Today we successfully simulated our first basic traffic scenarios in SUMO! Our next immediate step is to connect this mobility model with OMNeT++ using Veins to observe network packet behavior in real-time.',
