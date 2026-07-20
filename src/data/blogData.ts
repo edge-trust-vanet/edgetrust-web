@@ -11,6 +11,26 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'multi-density-traffic-analysis',
+    title: 'Phase 2 Complete: Multi-Density Traffic Simulation & Performance Analysis',
+    excerpt: 'We successfully simulated Low, Medium, and High traffic densities in SUMO and analyzed the resulting V2V and V2I network performance metrics in OMNeT++.',
+    content: [
+      'Today (July 20, 2026), we successfully completed the final objectives of Phase 2!',
+      'While basic simulation proved our architecture works, real-world VANETs operate under wildly varying conditions. To rigorously test our network\'s scalability and reliability, we generated three distinct traffic profiles in SUMO:',
+      '1. Low Density: Sparse, isolated vehicle movement to establish a perfect-communication baseline.',
+      '2. Medium Density: Standard urban traffic to test typical DSRC message exchanges between vehicles and RSUs.',
+      '3. High Density: Heavy congestion designed to saturate the wireless channel and induce packet collisions.',
+      'Network Analysis and Metrics:',
+      'By running these scenarios through OMNeT++, we successfully extracted critical communication metrics (Scalar and Vector data). The results allowed us to analyze Packet Propagation Delays and Packet Delivery Ratios (PDR). As expected, in High Density scenarios, the sheer volume of 802.11p broadcasts leads to increased channel contention and MAC-layer collisions.',
+      'This multi-density dataset is exactly what our Trust Management system needs. By understanding normal network degradation (due to traffic), our upcoming Machine Learning models will be able to distinguish between natural packet loss and malicious blackhole attacks.',
+      'Next, we move to Phase 3: Implementing the Edge Intelligence on our RSUs to detect these malicious behaviors!'
+    ],
+    date: 'Jul 20, 2026',
+    readTime: '3 min read',
+    category: 'Analysis',
+    imageUrl: 'https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
     id: 'sumo-veins-omnet-integration',
     title: 'Bridging the Gap: Successful SUMO, OMNeT++, and Veins Integration',
     excerpt: 'We achieved a major milestone today by establishing a bidirectional real-time bridge between our SUMO mobility traffic and the OMNeT++ network simulator using Veins. It wasn\'t easy, but we crushed the bugs!',
