@@ -11,6 +11,21 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'phase-3-trust-framework-implementation',
+    title: 'Phase 3 Milestone: Malicious Node Injection & RSU Trust Evaluation',
+    excerpt: 'We successfully implemented the Trust Evaluation logic directly into the OMNeT++ Roadside Units (RSUs) and injected False Data Injection (FDI) behaviors into malicious vehicles.',
+    content: [
+      'Today (July 28, 2026) marks the completion of the core C++ simulation portion of Phase 3!',
+      'We modified the EdgeTrustVehicleApp to assign 25% of the simulated vehicles as malicious nodes. These rogue vehicles execute False Data Injection (FDI) attacks by broadcasting falsified Basic Safety Messages (BSMs), such as faking their GPS coordinates or reporting sudden 0 m/s speeds to cause phantom traffic jams.',
+      'Simultaneously, we implemented the Edge Intelligence directly onto the EdgeTrustRSUApp. Our Roadside Units now actively track every vehicle\'s history and calculate their Physical Plausibility (kinematics) and Message Consistency. These features are fused into a rolling Trust Score.',
+      'During our test runs, we watched the RSUs successfully catch the malicious nodes in real-time! The RSUs correctly penalized the fake GPS data, tanked the malicious nodes\' trust scores near zero, and issued immediate BLOCK verdicts. All of this telemetry is now streaming to a CSV dataset, perfectly setting the stage for our upcoming Python Machine Learning integration.'
+    ],
+    date: 'Jul 28, 2026',
+    readTime: '3 min read',
+    category: 'Milestone',
+    imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
     id: 'multi-density-traffic-analysis',
     title: 'Phase 2 Complete: Multi-Density Traffic Simulation & Performance Analysis',
     excerpt: 'We successfully simulated Low, Medium, and High traffic densities in SUMO and analyzed the resulting V2V and V2I network performance metrics in OMNeT++.',
