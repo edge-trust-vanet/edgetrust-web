@@ -11,6 +11,23 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'obu-level-trust-validation',
+    title: 'OBU-Level Trust Validation: Local Verification at the Edge',
+    excerpt: 'We extended the Trust Framework directly into the On-Board Units (OBUs), introducing a lightweight local filter to instantly drop malicious False Data Injection attacks.',
+    content: [
+      'Today (August 11, 2026), we successfully pushed our EdgeTrust framework down to the vehicle level!',
+      'Until now, our On-Board Units (OBUs) were essentially passive relays—they broadcasted telemetry and blindly received messages, relying entirely on the heavy Machine Learning inference happening at the Roadside Unit (RSU) to protect the network.',
+      'To minimize communication overhead and reduce malicious message propagation, we introduced a new Local Verification Layer directly into the OBU C++ codebase (EdgeTrustVehicleApp).',
+      'Because OBUs have strictly limited processing power, we did not force them to run complex Random Forest algorithms. Instead, they act as the fast-response first line of defense. We built a lightweight kinematic physics check that executes the millisecond an OBU receives a Basic Safety Message (BSM).',
+      'If the received packet claims physically impossible data—such as an attacker trying to inject a 0 m/s speed while being 150 meters away—the receiving OBU instantly flags the sender as suspicious and drops the packet. It does not forward it, and it does not process it further.',
+      'By dropping these blatant False Data Injection (FDI) attacks locally, we drastically reduce bandwidth consumption and stop the attack from propagating across the VANET grid.'
+    ],
+    date: 'Aug 11, 2026',
+    readTime: '3 min read',
+    category: 'Milestone',
+    imageUrl: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
     id: 'phase-4-ml-hybrid-trust',
     title: 'Phase 4 Complete: Hybrid Machine Learning Trust Model Integration',
     excerpt: 'We successfully integrated our Random Forest Machine Learning pipeline with the temporal Trust Engine, proving that our Hybrid architecture can accurately detect and isolate malicious vehicular nodes.',
