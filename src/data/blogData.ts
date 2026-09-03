@@ -11,6 +11,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'phase-5-adaboost-cpp-integration',
+    title: 'Phase 5 Complete: AdaBoost C++ Integration & Live GUI Verification',
+    excerpt: 'We successfully exported our trained Python AdaBoost model directly into the OMNeT++ C++ core, enabling sub-microsecond Trust Evaluation and live GUI verification.',
+    content: [
+      'Today (September 3, 2026), we reached the ultimate milestone: embedding our Machine Learning intelligence directly into the C++ simulation core!',
+      'Previously, our ML models ran offline in Python. To achieve real-time Edge computing, we wrote a script to export the exact decision stumps, weights, and feature scalers from our trained Python AdaBoost model straight into a C++ header (AdaBoostPredictor.h).',
+      'The Roadside Unit (RSU) now evaluates every incoming BSM in sub-microsecond time using a Hybrid Decision Engine. If the historical trust score drops below 0.40 AND the AdaBoost model flags the packet, it is instantly BLOCKED.',
+      'Furthermore, we brought the simulation to life visually in the OMNeT++ Qtenv GUI. Malicious vehicles now turn red and pop speech bubbles announcing their specific attacks (e.g., "FDI: Crash on Intersection! Stop!"). In response, the RSU pops bubbles announcing its ML verdicts (e.g., "AdaBoost: BLOCK! [V5 Mal 72%]").',
+      'Finally, we implemented true Vehicle-to-Infrastructure (V2I) defense. When the RSU blocks an attacker, it broadcasts an IEEE 802.11p Road Safety Advisory back to the honest (green) vehicles, instructing their local OBUs to blacklist the rogue node. This perfectly demonstrates our decentralized Edge Trust network in action!'
+    ],
+    date: 'Sep 3, 2026',
+    readTime: '5 min read',
+    category: 'Milestone',
+    imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
+  },
+  {
     id: 'obu-level-trust-validation',
     title: 'OBU-Level Trust Validation: Local Verification at the Edge',
     excerpt: 'We extended the Trust Framework directly into the On-Board Units (OBUs), introducing a lightweight local filter to instantly drop malicious False Data Injection attacks.',
