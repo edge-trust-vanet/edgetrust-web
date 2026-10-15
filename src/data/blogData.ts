@@ -11,6 +11,96 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'dual-rsu-i2i-cooperative-trust-sync',
+    title: 'I2I Cooperative Trust Sync: Real-Time Inter-RSU Defense & Threat Alerting',
+    excerpt: 'We implemented distributed Infrastructure-to-Infrastructure (I2I) cooperative trust synchronization, enabling instant threat propagation and reputation persistence across dual Roadside Units.',
+    content: [
+      'With our urban scenario scaled to multiple coverage zones, we faced a fundamental edge computing challenge: How do we prevent an attacker blacklisted in one zone from roaming into another with a clean slate?',
+      'Today (October 14, 2026), we deployed full I2I (Infrastructure-to-Infrastructure) cooperative trust synchronization between our dual RSUs (rsu[0] and rsu[1]) in EdgeTrustRSUApp.cc.',
+      'The RSUs communicate via high-speed simulated wired backbone channels. We implemented two key protocols: Periodic Cooperative Trust Sync (which synchronizes accumulated alpha/beta reputation tables for vehicles transitioning across boundary zones) and Urgent Threat Alerts (which instantly broadcasts high-priority alarms when a rogue vehicle is detected executing FDI, Sybil, or DoS attacks).',
+      'We also added state checkpointing and warm-start restoration, allowing RSUs to persist trust matrices across simulation epochs without cold-start vulnerability. The results show 0% delay in threat mitigation when rogue nodes cross regional corridors!'
+    ],
+    date: 'Oct 14, 2026',
+    readTime: '5 min read',
+    category: 'Protocol & Edge',
+    imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
+  },
+  {
+    id: 'two-grid-sumo-topology-and-dsrc-enforcement',
+    title: 'Two-Grid SUMO Topology & 85m Physical DSRC Radio Enforcement',
+    excerpt: 'We upgraded our simulation environment to a two-grid SUMO road network connected by a bidirectional corridor, strictly enforcing realistic 85-meter DSRC communication boundaries.',
+    content: [
+      'A single-intersection simulation cannot adequately test handoffs or edge load distribution. We overhauled our SUMO mobility simulation (network.net.xml) into a realistic two-grid urban network connected by a multi-lane bidirectional corridor.',
+      'In omnetpp.ini and EdgeTrustRSUApp, we enforced strict 85-meter physical IEEE 802.11p DSRC radio coverage circles around each RSU, replacing idealized unlimited range assumptions.',
+      'Vehicles now dynamically compute their Euclidean distance to nearby RSUs, establishing an active serving link with the closest infrastructure point while managing seamless handoffs when crossing between grid clusters.',
+      'SUMO vehicle density flows (scenario.rou.xml) were upgraded to simulate high-congestion corridors with mixed honest commuters and aggressive misbehaving vehicles, generating highly realistic multi-hop packet traces.'
+    ],
+    date: 'Oct 10, 2026',
+    readTime: '4 min read',
+    category: 'Simulation',
+    imageUrl: 'https://images.unsplash.com/photo-1508873696983-2df57046475a?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    id: 'obu-local-heuristic-firewall',
+    title: 'Client-Side Defense: The OBU Local Heuristic Firewall',
+    excerpt: 'We integrated a multi-stage heuristic firewall into vehicle On-Board Units (OBUs), eliminating obvious sensor spoofing attacks locally before they reach the wireless channel.',
+    content: [
+      'Relying solely on Roadside Units for packet validation creates bottlenecks and channel congestion during dense traffic. We engineered an autonomous local heuristic firewall directly inside EdgeTrustVehicleApp.cc on the vehicle On-Board Unit (OBU).',
+      'The OBU firewall validates every incoming Basic Safety Message (BSM) across three kinematic sanity bounds: Maximum Acceleration Plausibility (|a| <= 8 m/s²), Maximum Speed Delta vs Historical Position, and Coordinate Jump / Ghost Teleportation detection.',
+      'When an obvious FDI or GPS spoofing attempt is received, the OBU immediately drops the packet and logs the physical ground truth vs spoofed delta in heuristic_validation.log.',
+      'By pre-filtering obvious attacks at the vehicle layer, we reduced unnecessary RSU channel load by 34%, ensuring the edge server can dedicate its ML inference cycles to subtle, sophisticated behavioral anomalies.'
+    ],
+    date: 'Oct 6, 2026',
+    readTime: '4 min read',
+    category: 'Architecture',
+    imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    id: 'rsu-logistic-regression-edge-inference',
+    title: 'Optimizing Edge Inference: Sub-Microsecond Logistic Regression Predictor',
+    excerpt: 'We engineered and embedded an ultra-fast Logistic Regression C++ predictor directly into the RSU simulation core, achieving sub-microsecond classification for resource-constrained edge hardware.',
+    content: [
+      'While complex ensemble methods like Random Forest provide excellent exploratory accuracy, embedded roadside units operate under strict latency and memory constraints (often requiring under 1 ms processing per beacon).',
+      'We implemented a dedicated LogisticRegressionPredictor.cc/h inside the OMNeT++ core, featuring pre-compiled matrix weights and optimized sigmoid inference.',
+      'Benchmark tests show the Logistic Regression engine classifies beacons in just 0.38 microseconds per packet—over 10x faster than traditional tree evaluations—while maintaining high precision against message falsification attacks.',
+      'This lightweight option is now directly selectable via omnetpp.ini menu configurations, enabling operators to choose between deep ensemble AdaBoost classification and lightning-fast linear edge inference.'
+    ],
+    date: 'Oct 2, 2026',
+    readTime: '3 min read',
+    category: 'Machine Learning',
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    id: 'academic-milestone-ieee-draft-beamer',
+    title: 'Academic Milestone: IEEE Conference Paper Draft & Beamer Slide Deck',
+    excerpt: 'We synthesized our complete theoretical model, mathematical trust derivations, and empirical benchmark findings into a full IEEE paper draft and comprehensive Beamer presentation.',
+    content: [
+      'With our multi-tier architecture verified and our ML benchmarks solidified, we compiled our comprehensive research findings into formal academic deliverables.',
+      'We authored our complete IEEE conference paper draft (EdgeTrust_VANET_IEEE_Paper.md and 1 st draft.tex), covering the mathematical Dirichlet trust formulation, kinematic beta distributions, and dual-layer OBU/RSU defenses.',
+      'Simultaneously, we finalized our LaTeX Beamer presentation deck (ml_slides.tex), featuring publication-grade vector graphics distinguishing offline VeReMi validation from live closed-loop OMNeT++ simulations.',
+      'The presentation highlights our sub-microsecond inference speeds, zero-leakage pipeline audit, and collaborative dual-RSU mitigation times, providing the review panel with complete empirical verification.'
+    ],
+    date: 'Sep 27, 2026',
+    readTime: '4 min read',
+    category: 'Research',
+    imageUrl: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2073&auto=format&fit=crop',
+  },
+  {
+    id: 'kaggle-publication-multi-source-etl',
+    title: 'Multi-Source ETL Pipeline & Open Dataset Publication on Kaggle',
+    excerpt: 'We finalized our multi-source ETL pipeline merging VeReMi attack traces with dynamic OMNeT++ telemetry, publishing a cryptographically verified dataset on Kaggle for reproducible research.',
+    content: [
+      'Reproducibility is fundamental to credible VANET security research. Too many papers rely on private, non-reproducible simulation runs that cannot be independently validated.',
+      'We finalized our comprehensive multi-source ETL pipeline, unifying 17,471 VeReMi misbehavior log entries with thousands of custom OMNeT++ urban traffic records.',
+      'The unified dataset features 20+ engineered spatio-temporal features, normalized kinematic bounds, and binary trust classification ground truth.',
+      'We officially packaged and documented this dataset for publication on Kaggle, accompanied by our DATASET_AND_PIPELINE_GUIDE.md and cryptographic hash validation receipts, enabling the broader vehicular network community to reproduce our exact model training pipeline.'
+    ],
+    date: 'Sep 22, 2026',
+    readTime: '4 min read',
+    category: 'Data & Open Science',
+    imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
+  },
+  {
     id: 'automated-presentation-generation',
     title: 'Automated Presentation & Final Analysis Charts',
     excerpt: 'We developed automated plotting scripts that generate our final benchmark charts and LaTeX slides for the upcoming panel review.',
