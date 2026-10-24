@@ -233,7 +233,7 @@ export default function Landing() {
             <button
               onClick={() =>
                 setSelectedFigure({
-                  src: '/figures/architecture_4tier.png',
+                  src: '/figures/architecture.png',
                   title: 'Figure 1: Hierarchical 4-Tier System Architecture',
                   subtitle: 'Centralized SDN Controller, Regional Fog Computing, Edge RSUs, and Vehicle OBUs.',
                 })
@@ -248,7 +248,7 @@ export default function Landing() {
           <div
             onClick={() =>
               setSelectedFigure({
-                src: '/figures/architecture_4tier.png',
+                src: '/figures/architecture.png',
                 title: 'Figure 1: Hierarchical 4-Tier System Architecture',
                 subtitle: 'Centralized SDN Controller, Regional Fog Computing, Edge RSUs, and Vehicle OBUs.',
               })
@@ -256,7 +256,7 @@ export default function Landing() {
             className="cursor-zoom-in bg-white rounded-xl p-4 sm:p-8 flex items-center justify-center hover:opacity-[0.98] transition-opacity"
           >
             <img
-              src="/figures/architecture_4tier.png"
+              src="/figures/architecture.png"
               alt="EdgeTrust-VANET 4-Tier Architecture Diagram"
               className="max-h-[580px] w-auto object-contain"
             />
@@ -917,11 +917,11 @@ export default function Landing() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {[
-            { name: 'Nishanth Karthik', id: 'CB.SC.U4CSE23523', role: 'ML Lead & Architecture', img: nishanthImg },
-            { name: 'Aashiq M', id: 'CB.SC.U4CSE23560', role: 'Trust Protocol & Edge Logic', img: aashiqImg },
-            { name: 'Vivek K', id: 'CB.SC.U4CSE23360', role: 'Simulation & VeReMi Scenarios', img: vivekImg },
-            { name: 'Abhinav R', id: 'CB.SC.U4CSE23563', role: 'Hardware & Microcontroller Sizing', img: abhinavImg },
-            { name: 'Mounik Sai', id: 'CB.SC.U4CSE23561', role: 'Dataset Provenance & Leakage Audit', img: mounikImg },
+            { name: 'Nishanth Karthik', id: 'CB.SC.U4CSE23523', img: nishanthImg },
+            { name: 'Aashiq M', id: 'CB.SC.U4CSE23560', img: aashiqImg },
+            { name: 'Vivek K', id: 'CB.SC.U4CSE23360', img: vivekImg },
+            { name: 'Abhinav R', id: 'CB.SC.U4CSE23563', img: abhinavImg },
+            { name: 'Mounik Sai', id: 'CB.SC.U4CSE23561', img: mounikImg },
           ].map((member, idx) => (
             <div
               key={idx}
@@ -932,15 +932,14 @@ export default function Landing() {
                   <img
                     src={member.img}
                     alt={member.name}
-                    className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-200"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
                   <span className="text-lg font-instrument-serif">{member.name.charAt(0)}</span>
                 )}
               </div>
-              <h4 className="font-medium text-white text-xs mb-0.5">{member.name}</h4>
-              <div className="text-[10px] text-white/50 font-mono mb-1">{member.role}</div>
-              <div className="text-[9px] text-white/30 font-mono">{member.id}</div>
+              <h4 className="font-medium text-white text-xs mb-1">{member.name}</h4>
+              <div className="text-[10px] text-white/40 font-mono">{member.id}</div>
             </div>
           ))}
         </div>
