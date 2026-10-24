@@ -444,7 +444,7 @@ export default function Landing() {
 
             <div className="flex items-center gap-4">
               <a
-                href="https://www.kaggle.com/datasets/nishanthkarthik/edgetrust-vanet-dataset"
+                href="https://www.kaggle.com/datasets/mouniksai/vehicular-misbehavior-dataset-edgetrust-vanet/data"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-black font-semibold text-xs rounded-full px-5 py-2.5 hover:bg-white/90 transition-colors inline-flex items-center gap-2"
@@ -984,7 +984,7 @@ export default function Landing() {
               </a>
 
               <a
-                href="https://www.kaggle.com/datasets/nishanthkarthik/edgetrust-vanet-dataset"
+                href="https://www.kaggle.com/datasets/mouniksai/vehicular-misbehavior-dataset-edgetrust-vanet/data"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-between p-3.5 rounded-lg border border-white/10 bg-[#0c0e14] hover:bg-white/5 transition-colors text-xs font-mono text-white"
@@ -1026,7 +1026,7 @@ export default function Landing() {
           <div>EdgeTrust-VANET · Decentralized Trust for Autonomous Vehicular Networks</div>
           <div className="flex items-center gap-6 text-[11px]">
             <a href="https://github.com/edge-trust-vanet" target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a>
-            <a href="https://www.kaggle.com/datasets/nishanthkarthik/edgetrust-vanet-dataset" target="_blank" rel="noopener noreferrer" className="hover:text-white">Kaggle</a>
+            <a href="https://www.kaggle.com/datasets/mouniksai/vehicular-misbehavior-dataset-edgetrust-vanet/data" target="_blank" rel="noopener noreferrer" className="hover:text-white">Kaggle</a>
             <Link to="/survey" className="hover:text-white">Survey</Link>
             <Link to="/blog" className="hover:text-white">Blog</Link>
           </div>
