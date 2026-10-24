@@ -26,6 +26,7 @@ export default function VanetCanvas() {
     if (!ctx) return
 
     let animId: number
+    let isVisible = true
     let t = 0
 
     /* ---------- setup ---------- */
@@ -45,15 +46,31 @@ export default function VanetCanvas() {
       })
     }
 
+    const dpr = Math.min(window.devicePixelRatio || 1, 2)
     function resize() {
       if (!canvas) return
-      canvas.width = canvas.offsetWidth * devicePixelRatio
-      canvas.height = canvas.offsetHeight * devicePixelRatio
-      ctx!.scale(devicePixelRatio, devicePixelRatio)
+      canvas.width = canvas.offsetWidth * dpr
+      canvas.height = canvas.offsetHeight * dpr
+      ctx!.scale(dpr, dpr)
     }
     resize()
     const ro = new ResizeObserver(resize)
     ro.observe(canvas)
+
+    // Pause rendering when user scrolls down to avoid any scroll lag
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isVisible = entry.isIntersecting
+          if (isVisible) {
+            cancelAnimationFrame(animId)
+            animId = requestAnimationFrame(draw)
+          }
+        })
+      },
+      { threshold: 0.05 }
+    )
+    observer.observe(canvas)
 
     /* ---------- draw loop ---------- */
     function draw() {
@@ -268,13 +285,16 @@ export default function VanetCanvas() {
       ctx.fillStyle = topCover
       ctx.fillRect(0, 0, W, roadTop * 0.9)
 
-      animId = requestAnimationFrame(draw)
+      if (isVisible) {
+        animId = requestAnimationFrame(draw)
+      }
     }
 
-    draw()
+    animId = requestAnimationFrame(draw)
     return () => {
       cancelAnimationFrame(animId)
       ro.disconnect()
+      observer.disconnect()
     }
   }, [])
 

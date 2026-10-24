@@ -64,41 +64,35 @@ export default function Nav() {
 
   return (
     <>
-      {/* ── Always Fixed Constant Navbar ── */}
+      {/* ── Always Fixed Constant Navbar (Minimalist, Zero-Lag) ── */}
       <header
-        className={`fixed top-0 inset-x-0 z-50 flex items-center justify-between px-6 md:px-10 lg:px-14 py-3.5 md:py-4 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-50 flex items-center justify-between px-6 md:px-10 lg:px-14 py-3.5 transition-colors duration-200 ${
           scrolled
-            ? 'bg-[#080a0e]/90 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
-            : 'bg-[#080a0e]/60 backdrop-blur-sm border-b border-white/[0.05]'
+            ? 'bg-[#080a0e]/95 border-b border-white/10 shadow-sm'
+            : 'bg-[#080a0e]/85 border-b border-white/[0.06]'
         }`}
       >
-        {/* Left: Brand Logo & Status indicator */}
-        <div className="flex items-center gap-6 lg:gap-8">
+        {/* Left: Clean Brand Logo */}
+        <div className="flex items-center gap-8 lg:gap-10">
           <button
             onClick={() => {
               if (location.pathname !== '/') navigate('/')
               else window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
-            className="flex items-center gap-2.5 text-left group"
+            className="flex items-center gap-2 text-left group"
           >
-            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-500/20 animate-pulse" />
-            <div className="flex flex-col">
-              <span className="text-white font-semibold text-base sm:text-lg tracking-tight font-sans group-hover:text-white/90 transition-colors">
-                EdgeTrust<span className="text-white/40 font-light">·VANET</span>
-              </span>
-              <span className="hidden sm:inline text-[9px] text-white/40 tracking-widest font-mono uppercase">
-                IEEE Research Portal
-              </span>
-            </div>
+            <span className="text-white font-medium text-base sm:text-lg tracking-tight font-sans">
+              EdgeTrust<span className="text-white/40">·VANET</span>
+            </span>
           </button>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item)}
-                className="text-white/70 hover:text-white text-xs xl:text-sm font-normal tracking-wide transition-colors duration-200 py-1"
+                className="text-white/60 hover:text-white text-xs font-mono tracking-wider uppercase transition-colors duration-150 py-1"
               >
                 {item.label}
               </button>
