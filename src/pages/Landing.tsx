@@ -108,9 +108,9 @@ export default function Landing() {
     ? ATTACK_MATRIX
     : ATTACK_MATRIX.filter((a) => a.category === attackFilter)
 
-  const bibtexCode = `@inproceedings{karthik2026edgetrust,
+  const bibtexCode = `@inproceedings{edgetrust2026vanet,
   title={EdgeTrust-VANET: A Decentralized Trust Management and Machine Learning Framework for Secure Vehicular Ad Hoc Networks},
-  author={Karthik, Nishanth and M, Aashiq and K, Vivek and R, Abhinav and Sai, Mounik and M R, Neethu},
+  author={Neethu, M. R. and Mounik Sai, M. and Aashiq, E. and Vivek Vardhan, C. and Nishanth, K. and Abhinav, J.},
   booktitle={IEEE Transactions on Intelligent Transportation Systems (Under Review)},
   year={2026},
   url={https://github.com/edge-trust-vanet}
@@ -917,7 +917,7 @@ export default function Landing() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {[
-            { name: 'Nishanth Karthik', id: 'CB.SC.U4CSE23523', img: nishanthImg },
+            { name: 'Nishanth K', id: 'CB.SC.U4CSE23523', img: nishanthImg },
             { name: 'Aashiq M', id: 'CB.SC.U4CSE23560', img: aashiqImg },
             { name: 'Vivek K', id: 'CB.SC.U4CSE23360', img: vivekImg },
             { name: 'Abhinav R', id: 'CB.SC.U4CSE23563', img: abhinavImg },
