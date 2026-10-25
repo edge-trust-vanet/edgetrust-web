@@ -1025,14 +1025,166 @@ export default function Landing() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="py-10 border-t border-white/10 text-center text-white/40 text-xs font-mono">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>EdgeTrust-VANET · Decentralized Trust for Autonomous Vehicular Networks</div>
-          <div className="flex items-center gap-6 text-[11px]">
-            <a href="https://github.com/edge-trust-vanet" target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a>
-            <a href="https://www.kaggle.com/datasets/mouniksai/vehicular-misbehavior-dataset-edgetrust-vanet/data" target="_blank" rel="noopener noreferrer" className="hover:text-white">Kaggle</a>
-            <Link to="/survey" className="hover:text-white">Survey</Link>
-            <Link to="/blog" className="hover:text-white">Blog</Link>
+      <footer className="pt-16 pb-12 border-t border-white/[0.08] bg-[#06080c] text-white/60 text-xs">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/[0.06]">
+            
+            {/* Col 1: Initiative Info & Supervision */}
+            <div className="md:col-span-5 space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="font-instrument-serif text-2xl text-white tracking-wide">
+                  EdgeTrust-VANET
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border border-white/20 bg-white/5 text-white/70">
+                  v1.0-research
+                </span>
+              </div>
+              <p className="text-white/50 text-xs sm:text-sm font-light leading-relaxed max-w-md">
+                A decentralized four-tier hierarchical trust management and kinematic filtering framework for connected and autonomous vehicular networks.
+              </p>
+              <div className="pt-2 text-xs text-white/40 font-mono space-y-1">
+                <div>Under the academic guidance of <span className="text-white font-medium">Dr. Neethu M R</span></div>
+                <div>Department of Computer Science and Engineering</div>
+                <div>Amrita School of Computing, Coimbatore, India</div>
+              </div>
+            </div>
+
+            {/* Col 2: Git Repositories */}
+            <div className="md:col-span-4 space-y-3">
+              <div className="text-[11px] font-mono text-white/40 uppercase tracking-widest mb-3">
+                GitHub Repositories
+              </div>
+              <div className="space-y-2.5">
+                <a
+                  href="https://github.com/edge-trust-vanet/edgetrust-core"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-2.5 p-2 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/20 transition-all"
+                >
+                  <GithubIcon size={16} className="text-white/60 group-hover:text-white mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <div className="text-white font-mono text-xs flex items-center justify-between">
+                      <span className="truncate group-hover:underline">edgetrust-core</span>
+                      <ExternalLink size={12} className="text-white/40 group-hover:text-white shrink-0 ml-1" />
+                    </div>
+                    <div className="text-[11px] text-white/40 truncate">OMNeT++ 6.4, SUMO, Veins & native C++ inference</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/edge-trust-vanet/edgetrust-ml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-2.5 p-2 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/20 transition-all"
+                >
+                  <GithubIcon size={16} className="text-white/60 group-hover:text-white mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <div className="text-white font-mono text-xs flex items-center justify-between">
+                      <span className="truncate group-hover:underline">edgetrust-ml</span>
+                      <ExternalLink size={12} className="text-white/40 group-hover:text-white shrink-0 ml-1" />
+                    </div>
+                    <div className="text-[11px] text-white/40 truncate">14-feature zero-leakage pipeline & 17-model benchmark</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/edge-trust-vanet/edgetrust-web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-2.5 p-2 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/20 transition-all"
+                >
+                  <GithubIcon size={16} className="text-white/60 group-hover:text-white mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <div className="text-white font-mono text-xs flex items-center justify-between">
+                      <span className="truncate group-hover:underline">edgetrust-web</span>
+                      <ExternalLink size={12} className="text-white/40 group-hover:text-white shrink-0 ml-1" />
+                    </div>
+                    <div className="text-[11px] text-white/40 truncate">React 18 / Vite portal & HTML5 mobility simulator</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/edge-trust-vanet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-2.5 p-2 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/20 transition-all"
+                >
+                  <GithubIcon size={16} className="text-white/60 group-hover:text-white mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <div className="text-white font-mono text-xs flex items-center justify-between">
+                      <span className="truncate group-hover:underline">edge-trust-vanet org</span>
+                      <ExternalLink size={12} className="text-white/40 group-hover:text-white shrink-0 ml-1" />
+                    </div>
+                    <div className="text-[11px] text-white/40 truncate">GitHub organization profile & initiative specs</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {/* Col 3: Research Artifacts & Portal Links */}
+            <div className="md:col-span-3 space-y-3">
+              <div className="text-[11px] font-mono text-white/40 uppercase tracking-widest mb-3">
+                Research & Artifacts
+              </div>
+              <ul className="space-y-2.5 text-xs">
+                <li>
+                  <a
+                    href="https://www.kaggle.com/datasets/mouniksai/vehicular-misbehavior-dataset-edgetrust-vanet/data"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+                  >
+                    <Database size={13} className="text-white/40" />
+                    <span>Kaggle Dataset (23,970 Records)</span>
+                    <ExternalLink size={10} className="text-white/40 ml-auto" />
+                  </a>
+                </li>
+                <li>
+                  <Link
+                    to="/survey"
+                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+                  >
+                    <FileText size={13} className="text-white/40" />
+                    <span>Literature Survey (285 Papers)</span>
+                    <ArrowRight size={10} className="text-white/40 ml-auto" />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/blog"
+                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+                  >
+                    <Layers size={13} className="text-white/40" />
+                    <span>Engineering Devlog & Checkpoints</span>
+                    <ArrowRight size={10} className="text-white/40 ml-auto" />
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/edge-trust-vanet/edgetrust-core/blob/main/reports/edge_trust_vanet_final_draft.tex"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+                  >
+                    <Download size={13} className="text-white/40" />
+                    <span>Conference Manuscript Source (TeX)</span>
+                    <ExternalLink size={10} className="text-white/40 ml-auto" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom copyright bar */}
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-white/40">
+            <div>
+              © 2026 EdgeTrust-VANET Research Initiative · Amrita Vishwa Vidyapeetham
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="px-2 py-0.5 rounded border border-white/10 bg-white/[0.02]">IEEE 802.11p</span>
+              <span className="px-2 py-0.5 rounded border border-white/10 bg-white/[0.02]">VeReMi 72.9%</span>
+              <span className="px-2 py-0.5 rounded border border-white/10 bg-white/[0.02]">0.38µs C++ ML</span>
+            </div>
           </div>
         </div>
       </footer>
