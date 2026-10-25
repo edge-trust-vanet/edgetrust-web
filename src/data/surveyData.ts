@@ -9,7 +9,7 @@ export const meta = {
     { strong: '2014–2026', rest: 'time span' },
     { strong: 'IEEE, ACM, Springer, Elsevier', rest: 'sources' },
   ],
-  guide: 'Ms Neethu M R',
+  guide: 'Dr Neethu M R',
   team: [
     { name: 'Mounik Sai', id: 'CB.SC.U4CSE23561' },
     { name: 'Aashiq', id: 'CB.SC.U4CSE23560' },

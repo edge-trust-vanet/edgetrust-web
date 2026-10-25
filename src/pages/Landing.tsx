@@ -910,8 +910,12 @@ export default function Landing() {
           <h2 className="font-instrument-serif text-3xl sm:text-4xl md:text-5xl text-white">
             Authors & Academic Supervision
           </h2>
-          <p className="text-white/60 text-xs sm:text-sm mt-1 font-light">
-            Under the guidance of <span className="text-white font-medium">Ms. Neethu M R</span>, Assistant Professor, Dept. of Computer Science & Engineering, Amrita Vishwa Vidyapeetham.
+          <p className="text-white/70 text-xs sm:text-sm mt-2 font-light leading-relaxed">
+            Under the guidance of{' '}
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 text-white border border-white/25 shadow-sm backdrop-blur-sm">
+              Dr. Neethu M R
+            </span>
+            , Assistant Professor, Dept. of Computer Science & Engineering, Amrita Vishwa Vidyapeetham.
           </p>
         </div>
 

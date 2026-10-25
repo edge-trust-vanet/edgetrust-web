@@ -149,7 +149,7 @@ edgetrust-web/
 
 Developed as part of the **EdgeTrust-VANET** research initiative at **Amrita Vishwa Vidyapeetham, Amrita School of Computing, Coimbatore, India**:
 
-- **Ms. Neethu M R** - *Project Guide & Assistant Professor, Department of Computer Science and Engineering*
+- **Dr. Neethu M R** - *Project Guide & Assistant Professor, Department of Computer Science and Engineering*
 - **Madisetty Mounik Sai** - *Undergraduate Researcher* (`CB.SC.U4CSE23561`)
 - **Edavalapati Aashiq** - *Undergraduate Researcher* (`CB.SC.U4CSE23560`)
 - **Chitturi Vivek Vardhan** - *Undergraduate Researcher* (`CB.SC.U4CSE23360`)
